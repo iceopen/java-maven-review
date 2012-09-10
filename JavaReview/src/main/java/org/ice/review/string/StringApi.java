@@ -84,6 +84,29 @@ public class StringApi {
 		System.out.println(str.trim().length());
 	}
 
+	public void demo12() {
+		String str = "TOM:89|JERRY:90|TONY:78";
+		String s1[] = str.split("\\|");
+		for (int x = 0; x < s1.length; x++) {
+			String s2[] = s1[x].split(":");
+			System.out.println(s2[0] + " --> " + s2[1]);
+		}
+	}
+
+	public void demo13() {
+		String email = "a.a@Aacom";
+		boolean flag = true;
+		if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+			flag = false;
+		}
+		if (flag) {
+			if (!(email.indexOf("@") < email.indexOf("."))) {
+				flag = false;
+			}
+		}
+		System.out.println(flag);
+	}
+
 	public static void main(String[] args) {
 		StringApi s = new StringApi();
 		s.demo1();
@@ -97,5 +120,7 @@ public class StringApi {
 		s.demo9();
 		s.demo10();
 		s.demo11();
+		s.demo12();
+		s.demo13();
 	}
 }
